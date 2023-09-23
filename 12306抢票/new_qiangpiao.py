@@ -12,7 +12,8 @@ time: 2018-11-21
 
 import re
 from splinter.browser import Browser
-from time import sleep
+# 引入sleep延时函数
+from time import sleep    
 import sys
 import httplib2
 from urllib import parse
@@ -109,6 +110,7 @@ class BrushTicket(object):
         try:
             print('开始刷票……')
             # 加载车票查询信息
+            # 添加起始站 终点站 和日期
             self.driver.cookies.add({"_jc_save_fromStation": self.from_station})
             self.driver.cookies.add({"_jc_save_toStation": self.to_station})
             self.driver.cookies.add({"_jc_save_fromDate": self.from_time})
